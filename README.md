@@ -3,7 +3,7 @@ Line-Length
 
 Calculate Line Length for datasets on the IEEG-Portal
 
-  IEEGLINELENGTH  Calculates line length on an IEEGDataset object.
+    IEEGLINELENGTH  Calculates line length on an IEEGDataset object.
      IEEGLINELENGTH(DATASET, WINL) calculates the line length on each
      channel of the provided dataset. Linelength will be calculated using
      a window length of WINL, where WINL is the number of samples in the
@@ -32,7 +32,7 @@ Calculate Line Length for datasets on the IEEG-Portal
        IEEGLINELENGTH(DATASET, 1000, 'noOverlap', false)
   
      --- --- --- --- --- --- --- ---
-   To read line length from Binary file:
-     >> fid = fopen('filename','r');
-     >> data = fread(fid, 'double');
-     >> data = reshape(data, nrChannels,[]);
+    To read line length from Binary file:
+         >> fid = fopen('filename','r');
+        >> data = fread(fid, 'double');
+        >> data = reshape(data, nrChannels,[]);
