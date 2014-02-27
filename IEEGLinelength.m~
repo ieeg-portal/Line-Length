@@ -106,8 +106,18 @@ function IEEGLinelength(dataset, winL, varargin)
   fwrite(fid,channels,'uint32');
   fwrite(fid,winL,'uint32');
   fwrite(fid,overlap,'uint8');
-  fwrite(fid, dataset.sampleRate,'double');
- 
+  
+  if dataset.isResampled
+    
+  else
+    allSampleRates = [obj.channels.sampleRate];
+    allReqSampleRate = allSampleRates(channels);
+          
+    if all(allReqSampleRate==allReqSampleRate(1))
+      fwrite(fid,
+    end
+    
+  end
   
   % Write first value(s)
   if overlap
