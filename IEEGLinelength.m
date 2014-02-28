@@ -32,11 +32,6 @@ function IEEGLinelength(dataset, winL, varargin)
   %
   %   See Also: READLLRESULTS
   
-  % To read line length from Binary file:
-  %   >> fid = fopen('filename','r');
-  %   >> data = fread(fid, 'double');
-  %   >> data = reshape(data, nrChannels,[]);
-  
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % Copyright 2013 Trustees of the University of Pennsylvania
   % 
@@ -146,7 +141,7 @@ function IEEGLinelength(dataset, winL, varargin)
     curIndex = curIndex + (1e6*(endIdx-(2*winL)))/sf;
 
     % Store non-overlapping Line Length windows.
-    if overlap
+    if ~overlap
       LL = LL(1:winL:end,:);
     end
     
